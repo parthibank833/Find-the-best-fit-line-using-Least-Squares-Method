@@ -17,38 +17,53 @@ To implement univariate Linear Regression to fit a straight line using least squ
 6. Obtain the straight line equation Y=mX+b and plot the scatterplot.
 
 ## Program:
-Developed by: PRIYANGHA G
-RegisterNumber: 212223040157
 ```
+Program to implement univariate Linear Regression to fit a straight line using least squares.
+Developed by: parthiban k
+RegisterNumber:212224250013
+
+program code
 
 import numpy as np
 import matplotlib.pyplot as plt
-X=np.array(eval(input()))
-Y=np.array(eval(input()))
-X_mean=np.mean(X)
-print(X_mean)
-Y_mean=np.mean(Y)
-print(Y_mean)
-num=0
-denum=0
-for i in range(len(X)):
-  num+=(X[i]-X_mean)*(Y[i]-Y_mean)
-  denum+=(X[i]-X_mean)**2
-m=num/denum
-print(m)
-b=Y_mean - m*X_mean
-print(b)
-Y_pred=m*X+b
-print(Y_pred)
-plt.scatter(X,Y,color='blue')
-plt.plot(X,Y_pred,color='yellow')
+
+x = np.array(eval(input()))
+y = np.array(eval(input()))
+
+I/P: 2,9,5,5,3,7,1,8,6,2
+69,98,82,77,71,84,55,94,84,64
+
+x_mean = np.mean(x)
+y_mean = np.mean(y)
+
+num = 0
+denom = 0
+for i in range(len(x)):
+    num += (x[i] - x_mean) * (y[i] - y_mean)
+    denom += (x[i] - x_mean) ** 2
+m = num / denom
+
+b = y_mean - m * x_mean
+
+print(m, b)
+
+O/P: 4.742603550295859 55.035502958579876
+
+y_predicted = m * x + b
+print(y_predicted)
+
+O/P: [64.52071006 97.71893491 78.74852071 78.74852071 69.26331361 88.23372781
+ 59.77810651 92.97633136 83.49112426 64.52071006]
+
+plt.scatter(x, y)
+plt.plot(x, y_predicted, color='red')
 plt.show()
 
-*/
 ```
 
 ## Output:
-![image](https://github.com/user-attachments/assets/9108f6cc-2d31-43a3-9795-01c6644714b6)
+
+<img width="1920" height="1080" alt="Screenshot 2026-01-24 114302" src="https://github.com/user-attachments/assets/1f584d63-90b5-4cea-a3c5-aba37bd8b47c" />
 
 
 
